@@ -1,0 +1,460 @@
+{
+  "title": "Natural Gas Imports by Conutry (TJ)",
+  "width": 750,
+  "height": 500,
+
+  "projection": {
+    "type": "conicEqualArea",
+    "center": [ 18, 47 ],
+    "parallels": [ 40, 65 ],
+    "scale": 750
+  },
+
+  "params": [
+    {
+      "name": "year_slider",
+      "value": 1995,
+      "bind": {
+        "input": "range",
+        "min": 1990,
+        "max": 2020,
+        "step": 1,
+        "name": "Select the year:"
+      }
+    }
+  ],
+
+  "layer": [
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/SctMccoll/Week-10-Homework/main/js/EU.topojson",
+        "format": {
+          "type": "topojson",
+          "feature": "ne_50m_ocean"
+        }
+      },
+
+      "mark": {
+        "type": "geoshape",
+        "fill": "#E8F0F5"
+      }
+    },
+
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/SctMccoll/Week-10-Homework/main/js/EU.topojson",
+        "format": {
+          "type": "topojson",
+          "feature": "ne_50m_graticules_5"
+        }
+      },
+
+      "mark": {
+        "type": "geoshape",
+        "fill": "None",
+        "stroke": "lightgray"
+      }
+    },
+
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/SctMccoll/Week-10-Homework/main/js/EU.topojson",
+        "format": {
+          "type": "topojson",
+          "feature": "ne_50m_admin_0_countries"
+        }
+      },
+      "transform": [
+        {
+          "calculate": "'Import data is not available in ' + datum.properties.NAME",
+          "as": "note"
+        }
+      ],
+
+      "mark": {
+        "type": "geoshape",
+        "fill": "#DBDBDB",
+        "stroke": "white"
+      },
+      "encoding": {
+        "tooltip": {
+          "field": "note"
+        }
+      }
+    },
+
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/SctMccoll/Week-10-Homework/main/Data/Natural_gas_imports.csv"
+      },
+      "transform": [
+        { "filter": "datum.from=='TOTAL'" },
+        { "filter": "datum.year==year_slider" },
+        { "filter": "datum.value!=0" },
+        {
+          "lookup": "to",
+          "from": {
+            "data": {
+              "url": "https://raw.githubusercontent.com/SctMccoll/Week-10-Homework/main/js/EU.topojson",
+              "format": {
+                "type": "topojson",
+                "feature": "ne_50m_admin_0_countries"
+              }
+            },
+            "key": "properties.ADM0_A3_BR",
+            "fields": [ "properties", "type", "geometry" ]
+          }
+        }
+      ],
+
+      "params": [
+        {
+          "name": "select_country",
+          "select": {
+            "type": "point",
+            "fields": [ "to" ]
+          }
+        }
+      ],
+
+      "mark": {
+        "type": "geoshape",
+        "fill": "beige",
+        "stroke": "lightgray"
+      },
+
+      "encoding": {
+        "tooltip": [
+          {
+            "field": "properties.NAME",
+            "type": "nominal",
+            "title": "Country"
+          },
+          {
+            "field": "value",
+            "type": "quantitative",
+            "format": ".3s",
+            "title": "Total Imports (TJ)"
+          }
+        ]
+      }
+    },
+
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/SctMccoll/Week-10-Homework/main/Data/Natural_gas_imports.csv"
+      },
+
+      "transform": [
+        { "filter": "datum.from=='TOTAL'" },
+        { "filter": "datum.year==year_slider" }
+      ],
+
+      "mark": {
+        "type": "circle",
+        "color": "#93BDF1",
+        "stroke": "white",
+        "opacity": 0.5
+      },
+      "encoding": {
+        "size": {
+          "legend": null,
+          "field": "value",
+          "type": "quantitative",
+          "scale": {
+            "domain": [ 0, 5000000 ],
+            "range": [ 0, 3000 ]
+          }
+        },
+        "latitude": {
+          "field": "to_lat"
+        },
+        "longitude": {
+          "field": "to_lon"
+        }
+      }
+    },
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/SctMccoll/Week-10-Homework/main/Data/Natural_gas_imports.csv"
+      },
+
+      "transform": [
+        {
+          "filter": {
+            "param": "select_country",
+            "empty": false
+          }
+        },
+        { "filter": "datum.from!='TOTAL'" },
+        { "filter": "datum.from!=datum.to" },
+        { "filter": "datum.year==year_slider" }
+      ],
+
+      "mark": {
+        "type": "rule",
+        "strokeCap": "round",
+        "color": "#FDBE4B"
+      },
+
+      "encoding": {
+        "strokeWidth": {
+          "field": "value",
+          "legend": null,
+          "type": "quantitative",
+          "scale": {
+            "domain": [ 0, 5000000 ],
+            "range": [ 2, 20 ]
+          }
+        },
+        "longitude": {
+          "field": "to_lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "to_lat",
+          "type": "quantitative"
+        },
+        "longitude2": { "field": "from_lon" },
+        "latitude2": { "field": "from_lat" }
+      }
+    },
+
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/SctMccoll/Week-10-Homework/main/Data/Natural_gas_imports.csv"
+      },
+
+      "transform": [
+        {
+          "filter": {
+            "param": "select_country",
+            "empty": false
+          }
+        },
+        { "filter": "datum.from=='TOTAL'" },
+        { "filter": "datum.year==year_slider" }
+      ],
+
+      "mark": {
+        "type": "circle",
+        "color": "#93BDF1",
+        "stroke": "white",
+        "opacity": 1
+      },
+      "encoding": {
+        "size": {
+          "legend": null,
+          "field": "value",
+          "type": "quantitative",
+          "scale": {
+            "domain": [ 0, 5000000 ],
+            "range": [ 0, 3000 ]
+          }
+        },
+        "latitude": {
+          "field": "to_lat"
+        },
+        "longitude": {
+          "field": "to_lon"
+        }
+      }
+    },
+
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/SctMccoll/Week-10-Homework/main/Data/Natural_gas_imports.csv"
+      },
+
+      "transform": [
+        {
+          "filter": {
+            "param": "select_country",
+            "empty": false
+          }
+        },
+        { "filter": "datum.from!='TOTAL'" },
+        { "filter": "datum.from!=datum.to" },
+        { "filter": "datum.year==year_slider" }
+      ],
+
+      "mark": {
+        "type": "circle",
+        "color": "#FDBE4B",
+        "stroke": "white",
+        "opacity": 1
+      },
+      "encoding": {
+        "size": {
+          "legend": null,
+          "field": "value",
+          "type": "quantitative",
+          "scale": {
+            "domain": [ 0, 5000000 ],
+            "range": [ 0, 3000 ]
+          }
+        },
+        "latitude": {
+          "field": "from_lat"
+        },
+        "longitude": {
+          "field": "from_lon"
+        }
+      }
+    },
+
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/SctMccoll/Week-10-Homework/main/Data/Natural_gas_imports.csv"
+      },
+
+      "transform": [
+        { "filter": "datum.from=='TOTAL'" },
+        { "filter": "datum.year==year_slider" },
+        { "filter": "datum.value!=0" },
+        {
+          "filter": {
+            "param": "select_country",
+            "empty": false
+          }
+        },
+        {
+          "calculate": "datum.value + ' TJ'",
+          "as": "note"
+        }
+      ],
+
+      "mark": {
+        "type": "text",
+        "color": "black",
+        "baseline": "top",
+        "fontWeight": 500
+      },
+      "encoding": {
+        "text": {
+          "field": "value",
+          "type": "nominal",
+          "format": ".3s"
+        },
+        "latitude": {
+          "field": "to_lat"
+        },
+        "longitude": {
+          "field": "to_lon"
+        }
+      }
+
+    },
+
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/SctMccoll/Week-10-Homework/main/Data/Natural_gas_imports.csv"
+      },
+
+      "transform": [
+        { "filter": "datum.from=='TOTAL'" },
+        { "filter": "datum.year==year_slider" },
+        { "filter": "datum.value!=0" },
+        {
+          "filter": {
+            "param": "select_country",
+            "empty": false
+          }
+        },
+        {
+          "calculate": "datum.value + ' TJ'",
+          "as": "note"
+        }
+      ],
+
+      "mark": {
+        "type": "text",
+        "color": "black",
+        "baseline": "bottom",
+        "fontWeight": 900
+      },
+      "encoding": {
+        "text": { "field": "to_name" },
+        "latitude": {
+          "field": "to_lat"
+        },
+        "longitude": {
+          "field": "to_lon"
+        }
+      }
+
+    },
+
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/SctMccoll/Week-10-Homework/main/Data/Natural_gas_imports.csv"
+      },
+
+      "transform": [
+        { "filter": "datum.from!='TOTAL'" },
+        { "filter": "datum.from!=datum.to" },
+        { "filter": "datum.year==year_slider" },
+        {
+          "filter": {
+            "param": "select_country",
+            "empty": false
+          }
+        }
+
+      ],
+
+      "mark": {
+        "type": "text",
+        "color": "black",
+        "baseline": "bottom",
+        "fontWeight": 500
+      },
+      "encoding": {
+        "text": { "field": "from_name" },
+        "latitude": {
+          "field": "from_lat"
+        },
+        "longitude": {
+          "field": "from_lon"
+        }
+      }
+    },
+
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/SctMccoll/Week-10-Homework/main/Data/Natural_gas_imports.csv"
+      },
+
+      "transform": [
+        {
+          "filter": {
+            "param": "select_country",
+            "empty": false
+          }
+        },
+        { "filter": "datum.from!='TOTAL'" },
+        { "filter": "datum.from!=datum.to" },
+        { "filter": "datum.year==year_slider" }
+      ],
+
+      "mark": {
+        "type": "text",
+        "color": "black",
+        "baseline": "top",
+        "fontWeight": 500
+      },
+      "encoding": {
+        "text": {
+          "field": "value",
+          "format": ".3s"
+        },
+        "latitude": {
+          "field": "from_lat"
+        },
+        "longitude": {
+          "field": "from_lon"
+        }
+      }
+    }
+  ]
+}
