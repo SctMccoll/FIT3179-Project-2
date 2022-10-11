@@ -3,6 +3,10 @@
   "width": 750,
   "height": 500,
 
+  "config": {
+    "background": null
+  },
+
   "projection": {
     "type": "conicEqualArea",
     "center": [ 18, 47 ],
@@ -27,7 +31,7 @@
   "layer": [
     {
       "data": {
-        "url": "https://raw.githubusercontent.com/SctMccoll/Week-10-Homework/main/js/EU.topojson",
+        "url": "https://raw.githubusercontent.com/SctMccoll/FIT3179-Project-2/main/js/EU.topojson",
         "format": {
           "type": "topojson",
           "feature": "ne_50m_ocean"
@@ -42,7 +46,7 @@
 
     {
       "data": {
-        "url": "https://raw.githubusercontent.com/SctMccoll/Week-10-Homework/main/js/EU.topojson",
+        "url": "https://raw.githubusercontent.com/SctMccoll/FIT3179-Project-2/main/js/EU.topojson",
         "format": {
           "type": "topojson",
           "feature": "ne_50m_graticules_5"
@@ -58,7 +62,7 @@
 
     {
       "data": {
-        "url": "https://raw.githubusercontent.com/SctMccoll/Week-10-Homework/main/js/EU.topojson",
+        "url": "https://raw.githubusercontent.com/SctMccoll/FIT3179-Project-2/main/js/EU.topojson",
         "format": {
           "type": "topojson",
           "feature": "ne_50m_admin_0_countries"
@@ -85,7 +89,7 @@
 
     {
       "data": {
-        "url": "https://raw.githubusercontent.com/SctMccoll/Week-10-Homework/main/Data/Natural_gas_imports.csv"
+        "url": "https://raw.githubusercontent.com/SctMccoll/FIT3179-Project-2/main/Data/Natural_gas_imports.csv"
       },
       "transform": [
         { "filter": "datum.from=='TOTAL'" },
@@ -95,7 +99,7 @@
           "lookup": "to",
           "from": {
             "data": {
-              "url": "https://raw.githubusercontent.com/SctMccoll/Week-10-Homework/main/js/EU.topojson",
+              "url": "https://raw.githubusercontent.com/SctMccoll/FIT3179-Project-2/main/js/EU.topojson",
               "format": {
                 "type": "topojson",
                 "feature": "ne_50m_admin_0_countries"
@@ -142,7 +146,7 @@
 
     {
       "data": {
-        "url": "https://raw.githubusercontent.com/SctMccoll/Week-10-Homework/main/Data/Natural_gas_imports.csv"
+        "url": "https://raw.githubusercontent.com/SctMccoll/FIT3179-Project-2/main/Data/Natural_gas_imports.csv"
       },
 
       "transform": [
@@ -176,7 +180,7 @@
     },
     {
       "data": {
-        "url": "https://raw.githubusercontent.com/SctMccoll/Week-10-Homework/main/Data/Natural_gas_imports.csv"
+        "url": "https://raw.githubusercontent.com/SctMccoll/FIT3179-Project-2/main/Data/Natural_gas_imports.csv"
       },
 
       "transform": [
@@ -222,7 +226,7 @@
 
     {
       "data": {
-        "url": "https://raw.githubusercontent.com/SctMccoll/Week-10-Homework/main/Data/Natural_gas_imports.csv"
+        "url": "https://raw.githubusercontent.com/SctMccoll/FIT3179-Project-2/main/Data/Natural_gas_imports.csv"
       },
 
       "transform": [
@@ -263,7 +267,7 @@
 
     {
       "data": {
-        "url": "https://raw.githubusercontent.com/SctMccoll/Week-10-Homework/main/Data/Natural_gas_imports.csv"
+        "url": "https://raw.githubusercontent.com/SctMccoll/FIT3179-Project-2/main/Data/Natural_gas_imports.csv"
       },
 
       "transform": [
@@ -305,7 +309,7 @@
 
     {
       "data": {
-        "url": "https://raw.githubusercontent.com/SctMccoll/Week-10-Homework/main/Data/Natural_gas_imports.csv"
+        "url": "https://raw.githubusercontent.com/SctMccoll/FIT3179-Project-2/main/Data/Natural_gas_imports.csv"
       },
 
       "transform": [
@@ -348,7 +352,7 @@
 
     {
       "data": {
-        "url": "https://raw.githubusercontent.com/SctMccoll/Week-10-Homework/main/Data/Natural_gas_imports.csv"
+        "url": "https://raw.githubusercontent.com/SctMccoll/FIT3179-Project-2/main/Data/Natural_gas_imports.csv"
       },
 
       "transform": [
@@ -387,7 +391,7 @@
 
     {
       "data": {
-        "url": "https://raw.githubusercontent.com/SctMccoll/Week-10-Homework/main/Data/Natural_gas_imports.csv"
+        "url": "https://raw.githubusercontent.com/SctMccoll/FIT3179-Project-2/main/Data/Natural_gas_imports.csv"
       },
 
       "transform": [
@@ -422,7 +426,7 @@
 
     {
       "data": {
-        "url": "https://raw.githubusercontent.com/SctMccoll/Week-10-Homework/main/Data/Natural_gas_imports.csv"
+        "url": "https://raw.githubusercontent.com/SctMccoll/FIT3179-Project-2/main/Data/Natural_gas_imports.csv"
       },
 
       "transform": [

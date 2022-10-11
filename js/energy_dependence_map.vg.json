@@ -3,9 +3,14 @@
   "title": "EU Energy Import Dependence",
   "width": 750,
   "height": 500,
+  
+
+  "config": {
+    "background": null
+  },
 
   "data": {
-    "url": "https://raw.githubusercontent.com/SctMccoll/Week-9-Homework/main/Data/Energy_Dependence_Time.csv"
+    "url": "https://raw.githubusercontent.com/SctMccoll/FIT3179-Project-2/main/Data/Energy_Dependence_Time.csv"
   },
 
   "projection": {
@@ -24,7 +29,7 @@
         "min": 1990,
         "max": 2020,
         "step": 1,
-        "name": "Select the year:"
+        "name": "Year:"
       }
     }
   ],
@@ -32,7 +37,7 @@
   "layer": [
     {
       "data": {
-        "url": "https://raw.githubusercontent.com/SctMccoll/Week-10-Homework/main/js/EU.topojson",
+        "url": "https://raw.githubusercontent.com/SctMccoll/FIT3179-Project-2/main/js/EU.topojson",
         "format": {
           "type": "topojson",
           "feature": "ne_50m_ocean"
@@ -47,7 +52,7 @@
 
     {
       "data": {
-        "url": "https://raw.githubusercontent.com/SctMccoll/Week-10-Homework/main/js/EU.topojson",
+        "url": "https://raw.githubusercontent.com/SctMccoll/FIT3179-Project-2/main/js/EU.topojson",
         "format": {
           "type": "topojson",
           "feature": "ne_50m_graticules_5"
@@ -65,7 +70,7 @@
 
     {
       "data": {
-        "url": "https://raw.githubusercontent.com/SctMccoll/Week-10-Homework/main/js/EU.topojson",
+        "url": "https://raw.githubusercontent.com/SctMccoll/FIT3179-Project-2/main/js/EU.topojson",
         "format": {
           "type": "topojson",
           "feature": "ne_50m_admin_0_countries"
@@ -96,7 +101,7 @@
           "lookup": "COUNTRY",
           "from": {
             "data": {
-              "url": "https://raw.githubusercontent.com/SctMccoll/Week-10-Homework/main/js/EU.topojson",
+              "url": "https://raw.githubusercontent.com/SctMccoll/FIT3179-Project-2/main/js/EU.topojson",
               "format": {
                 "type": "topojson",
                 "feature": "ne_50m_admin_0_countries"
@@ -129,6 +134,12 @@
             "scheme": "blueorange",
             "type": "linear",
             "domain": [ -1, 1 ]
+          },
+          "legend":{
+            "direction":"horizontal",
+            "orient":"bottom-right",
+            "fillColor":"white",
+            "padding":3
           }
         },
         "tooltip": [
