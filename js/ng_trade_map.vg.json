@@ -1,10 +1,9 @@
 {
-  "title": "Natural Gas Imports by Conutry (TJ)",
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": 750,
   "height": 500,
-
   "config": {
-    "background": null
+    "background": "#E8F0F5"
   },
 
   "projection": {
@@ -17,13 +16,13 @@
   "params": [
     {
       "name": "year_slider",
-      "value": 1995,
+      "value": 2020,
       "bind": {
         "input": "range",
         "min": 1990,
         "max": 2020,
         "step": 1,
-        "name": "Select the year:"
+        "name": "Year: "
       }
     }
   ],
@@ -69,6 +68,11 @@
         }
       },
       "transform": [
+        {
+          "calculate": "datum.properties.ADM0_A3_BR",
+          "as": "to"
+        },
+
         {
           "calculate": "'Import data is not available in ' + datum.properties.NAME",
           "as": "note"
@@ -332,6 +336,8 @@
         "type": "text",
         "color": "black",
         "baseline": "top",
+        "font": "Georgia",
+        "fontSize": "11",
         "fontWeight": 500
       },
       "encoding": {
@@ -375,6 +381,8 @@
         "type": "text",
         "color": "black",
         "baseline": "bottom",
+        "font": "Georgia",
+        "fontSize": "11",
         "fontWeight": 900
       },
       "encoding": {
@@ -411,6 +419,8 @@
         "type": "text",
         "color": "black",
         "baseline": "bottom",
+        "font": "Georgia",
+        "fontSize": "11",
         "fontWeight": 500
       },
       "encoding": {
@@ -445,6 +455,8 @@
         "type": "text",
         "color": "black",
         "baseline": "top",
+        "font": "Georgia",
+        "fontSize": "11",
         "fontWeight": 500
       },
       "encoding": {

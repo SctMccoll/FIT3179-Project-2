@@ -1,24 +1,24 @@
 ﻿#ng_trade_map {
-    margin: auto;
-    padding: 7px;
-    background-color: blanchedalmond;
-}
-
-#energy_dependence_map {
     margin: 19px;
     padding: 19px;
     height: fit-content;
     width: fit-content;
     background-color: darkgrey;
+}
 
-    
+#energy_dependence_map {
+    left: calc(50% - 375px);
+    padding: 19px;
+    height: fit-content;
+    width: fit-content;
+    background-color: darkgrey;
 }
 
 #head_box {
     margin: auto;
     margin-bottom: 10px;
     padding: 10px;
-    width: 1400px;
+    width: 1000px;
     height: auto;
     background-color: lightgrey;
 }
@@ -27,22 +27,22 @@
     margin: auto;
     margin-bottom: 10px;
     padding: 10px;
-    width: 1400px;
+    width: 1000px;
     height: auto;
     background-color: lightgrey;
 }
 
 #title {
     text-align: center;
-    font-weight:1000;
+    font-weight: bold;
     font-size:48px;
-    font-family:Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+    font-family: Lato;
 }
 
 #body_text {
     text-align: justify;
-    font-size: 14px;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 18px;
+    font-family: Lato;
     padding: 7px;
 }
 
