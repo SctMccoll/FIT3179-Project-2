@@ -37,21 +37,21 @@
 
     <div id="body_box">
         <div class="pure-g">
-            <div class="pure-u-3-5">
+            <div class="pure-u-4-5">
                 <div id="ng_trade_map"></div>
                 <p id="caption" style="position: relative; top: -20px;">*Includes the European Economic Area (EEA)</p>
             </div>
-            <div class="pure-u-2-5"><p id="body_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at convallis tortor. Sed venenatis purus vel rutrum gravida. Maecenas dui quam, dapibus vitae mauris tincidunt, blandit vehicula orci. Quisque at diam quis sapien luctus pulvinar id vel orci. Vestibulum quis purus pharetra, imperdiet mauris vel, finibus tortor. Donec eu tempus quam. Fusce ut augue facilisis, egestas risus et, imperdiet urna. Duis scelerisque enim sed dui sodales, et auctor nisl tristique. Aenean sit amet aliquam metus. Phasellus commodo dictum dolor, nec congue sem condimentum sed. Morbi sapien ligula, venenatis eget nunc sit amet, sodales consectetur urna. Nullam dignissim consectetur lacinia. Aliquam egestas, ex eget mollis viverra, tortor sapien bibendum ipsum, sed cursus lacus ex non lorem. Etiam ligula nisi, convallis sit amet tellus lobortis, imperdiet tincidunt turpis. Suspendisse iaculis tempus metus, ut accumsan orci fermentum non. Vestibulum sit amet aliquam lacus.</p></div>
+            <div class="pure-u-1-5"><p id="body_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at convallis tortor. Sed venenatis purus vel rutrum gravida. Maecenas dui quam, dapibus vitae mauris tincidunt, blandit vehicula orci. Quisque at diam quis sapien luctus pulvinar id vel orci. Vestibulum quis purus pharetra, imperdiet mauris vel, finibus tortor. Donec eu tempus quam. Fusce ut augue facilisis, egestas risus et, imperdiet urna. Duis scelerisque enim sed dui sodales, et auctor nisl tristique. Aenean sit amet aliquam metus. Phasellus commodo dictum dolor, nec congue sem condimentum sed. Morbi sapien ligula, venenatis eget nunc sit amet, sodales consectetur urna. Nullam dignissim consectetur lacinia. Aliquam egestas, ex eget mollis viverra, tortor sapien bibendum ipsum, sed cursus lacus ex non lorem. Etiam ligula nisi, convallis sit amet tellus lobortis, imperdiet tincidunt turpis. Suspendisse iaculis tempus metus, ut accumsan orci fermentum non. Vestibulum sit amet aliquam lacus.</p></div>
         </div>
     </div>
 
     <div id="body_box">
-        <div class="pure-g">
-            <div class="pure-u-3-5">
-                <div id="ng_trade_map"></div>
-                <p id="caption" style="position: relative; top: -20px;">*Includes the European Economic Area (EEA)</p>
+            
+            <div class="pure-g">
+                <div class="pure-u-2-5"><p id="body_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at convallis tortor. Sed venenatis purus vel rutrum gravida. Maecenas dui quam, dapibus vitae mauris tincidunt, blandit vehicula orci. Quisque at diam quis sapien luctus pulvinar id vel orci. Vestibulum quis purus pharetra, imperdiet mauris vel, finibus tortor. Donec eu tempus quam. Fusce ut augue facilisis, egestas risus et, imperdiet urna. Duis scelerisque enim sed dui sodales, et auctor nisl tristique. Aenean sit amet aliquam metus. Phasellus commodo dictum dolor, nec congue sem condimentum sed. Morbi sapien ligula, venenatis eget nunc sit amet, sodales consectetur urna. Nullam dignissim consectetur lacinia. Aliquam egestas, ex eget mollis viverra, tortor sapien bibendum ipsum, sed cursus lacus ex non lorem. Etiam ligula nisi, convallis sit amet tellus lobortis, imperdiet tincidunt turpis. Suspendisse iaculis tempus metus, ut accumsan orci fermentum non. Vestibulum sit amet aliquam lacus.</p></div>
+                <div class="pure-u-3-5">
+                    <div id="electricity_mix_bar"></div>
             </div>
-            <div class="pure-u-2-5"><p id="body_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at convallis tortor. Sed venenatis purus vel rutrum gravida. Maecenas dui quam, dapibus vitae mauris tincidunt, blandit vehicula orci. Quisque at diam quis sapien luctus pulvinar id vel orci. Vestibulum quis purus pharetra, imperdiet mauris vel, finibus tortor. Donec eu tempus quam. Fusce ut augue facilisis, egestas risus et, imperdiet urna. Duis scelerisque enim sed dui sodales, et auctor nisl tristique. Aenean sit amet aliquam metus. Phasellus commodo dictum dolor, nec congue sem condimentum sed. Morbi sapien ligula, venenatis eget nunc sit amet, sodales consectetur urna. Nullam dignissim consectetur lacinia. Aliquam egestas, ex eget mollis viverra, tortor sapien bibendum ipsum, sed cursus lacus ex non lorem. Etiam ligula nisi, convallis sit amet tellus lobortis, imperdiet tincidunt turpis. Suspendisse iaculis tempus metus, ut accumsan orci fermentum non. Vestibulum sit amet aliquam lacus.</p></div>
         </div>
     </div>
 
@@ -62,6 +62,10 @@
 
         var spec3 = "js/energy_dependence_map.vg.json";
         vegaEmbed('#energy_dependence_map', spec3).then(function (result) { }).catch(console.error);
+
+        var spec4 = "js/electricity_mix_bar.vg.json";
+        vegaEmbed('#electricity_mix_bar', spec3).then(function (result) { }).catch(console.error);
+
     </script>
 
 </body>

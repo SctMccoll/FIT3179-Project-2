@@ -1,6 +1,6 @@
 ﻿#ng_trade_map {
-    margin: 19px;
-    padding: 19px;
+    margin: 8px;
+    padding: 8px;
     height: fit-content;
     width: fit-content;
     background-color: darkgrey;
@@ -8,6 +8,14 @@
 
 #energy_dependence_map {
     left: calc(50% - 375px);
+    padding: 19px;
+    height: fit-content;
+    width: fit-content;
+    background-color: darkgrey;
+}
+
+#electricity_mix_bar {
+    margin: 19px;
     padding: 19px;
     height: fit-content;
     width: fit-content;

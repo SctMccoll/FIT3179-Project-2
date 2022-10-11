@@ -1,0 +1,58 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 750,
+  "height": 500,
+
+  "config": {
+    "background": "null"
+  },
+
+  "data": {
+    "url": "https://raw.githubusercontent.com/SctMccoll/FIT3179-Project-2/main/Data/electricity_heat_production.csv"
+  },
+
+  "params": [
+    {
+      "name": "country_select",
+      "value": "Germany",
+      "bind": {
+        "input": "select",
+        "options": ["Germany", "Spain", "France", "Italy", "Netherlands", "Poland"],
+        "name": "Country"
+      }
+    }
+  ],
+
+  "transform": [
+    { "filter": "datum.country==country_select" },
+    { "filter": "datum.product!='Total'" }
+  ],
+
+  "mark": "bar",
+  "encoding": {
+    "x": {
+      "field": "year",
+      "type": "ordinal",
+      "title": "Year"
+    },
+    "y": {
+      "field":"value",
+      "title":" Total Consumption (TJ)",
+      "type": "quantitative"
+    },
+    "color": {
+      "field": "product",
+      "type": "nominal",
+      "scale": {
+        "domain": [
+        "Solid fossil fuels", 
+        "Natural gas", 
+        "Nuclear heat",
+        "Oil and petroleum",
+        "Renewables and biofuels"
+        ]
+      },
+      "title": "Product"
+    }
+  }
+}
