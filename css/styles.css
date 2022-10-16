@@ -22,9 +22,19 @@
     background-color: darkgrey;
 }
 
+#main_box {
+    margin: auto;
+    margin-top: 19px;
+    margin-bottom: 19px;
+    padding: 19px;
+    width: fit-content;
+    height: fit-content;
+    background-color: lightblue;
+}
+
 #head_box {
     margin: auto;
-    margin-bottom: 10px;
+    margin-bottom: 19px;
     padding: 10px;
     width: 1000px;
     height: auto;
@@ -33,7 +43,7 @@
 
 #body_box {
     margin: auto;
-    margin-bottom: 10px;
+    margin-bottom: 19px;
     padding: 10px;
     width: 1000px;
     height: auto;

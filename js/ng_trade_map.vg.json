@@ -3,7 +3,7 @@
   "width": 650,
   "height": 500,
   "config": {
-    "background": "#E8F0F5"
+    "background": null
   },
 
   "projection": {
@@ -30,44 +30,23 @@
   "layer": [
     {
       "data": {
-        "url": "https://raw.githubusercontent.com/SctMccoll/FIT3179-Project-2/main/js/EU.topojson",
-        "format": {
-          "type": "topojson",
-          "feature": "ne_50m_ocean"
-        }
-      },
-
-      "mark": {
-        "type": "geoshape",
-        "fill": "#E8F0F5"
-      }
-    },
-
-    {
-      "data": {
-        "url": "https://raw.githubusercontent.com/SctMccoll/FIT3179-Project-2/main/js/EU.topojson",
-        "format": {
-          "type": "topojson",
-          "feature": "ne_50m_graticules_5"
-        }
-      },
-
-      "mark": {
-        "type": "geoshape",
-        "fill": "None",
-        "stroke": "lightgray"
-      }
-    },
-
-    {
-      "data": {
-        "url": "https://raw.githubusercontent.com/SctMccoll/FIT3179-Project-2/main/js/EU.topojson",
-        "format": {
-          "type": "topojson",
-          "feature": "ne_50m_admin_0_countries"
-        }
+        "url": "https://raw.githubusercontent.com/SctMccoll/FIT3179-Project-2/main/Data/Natural_gas_imports.csv"
       },
       "transform": [
+        {
+          "lookup": "to",
+          "from": {
+            "data": {
+              "url": "https://raw.githubusercontent.com/SctMccoll/FIT3179-Project-2/main/js/EU.topojson",
+              "format": {
+                "type": "topojson",
+                "feature": "ne_50m_admin_0_countries"
+              }
+            },
+            "key": "properties.ADM0_A3_BR",
+            "fields": [ "properties", "type", "geometry" ]
+          }
+        },
         {
           "calculate": "datum.properties.ADM0_A3_BR",
           "as": "to"
@@ -98,7 +77,7 @@
       "transform": [
         { "filter": "datum.from=='TOTAL'" },
         { "filter": "datum.year==year_slider" },
-        { "filter": "datum.value!=0" },
+        
         {
           "lookup": "to",
           "from": {

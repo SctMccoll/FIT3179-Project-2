@@ -1,5 +1,5 @@
 {
-  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.5.json",
   "width": 350,
   "height": 350,
 
@@ -43,15 +43,6 @@
     "color": {
       "field": "product",
       "type": "nominal",
-      "scale": {
-        "domain": [
-        "Solid fossil fuels", 
-        "Natural gas", 
-        "Nuclear heat",
-        "Oil and petroleum",
-        "Renewables and biofuels"
-        ]
-      },
       "title": "Product"
     }
   }
