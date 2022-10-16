@@ -95,7 +95,7 @@
 
       "mark": {
         "type": "geoshape",
-        "fill": "#f2f1e4",
+        "fill": "#cfcfbe",
         "stroke": "grey"
       },
 
