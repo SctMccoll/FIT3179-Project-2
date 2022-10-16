@@ -305,7 +305,7 @@
         "color": "black",
         "baseline": "top",
         "font": "Montserrat",
-        "fontSize": "12",
+        "fontSize": 12,
         "fontWeight": 500
       },
       "encoding": {
@@ -350,7 +350,7 @@
         "color": "black",
         "baseline": "bottom",
         "font": "Lato",
-        "fontSize": "11",
+        "fontSize": 11,
         "fontWeight": 900
       },
       "encoding": {
@@ -388,8 +388,8 @@
         "color": "black",
         "baseline": "bottom",
         "font": "Montserrat",
-        "fontSize": "12",
-        "fontWeight": 500
+        "fontSize": 12,
+        "fontWeight": 900
       },
       "encoding": {
         "text": { "field": "from_name" },
@@ -424,7 +424,7 @@
         "color": "black",
         "baseline": "top",
         "font": "Lato",
-        "fontSize": "11",
+        "fontSize": 11,
         "fontWeight": 500
       },
       "encoding": {
