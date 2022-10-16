@@ -95,7 +95,7 @@
 
       "mark": {
         "type": "geoshape",
-        "fill": "#e3ba8d",
+        "fill": "#f2dab3",
         "stroke": "white"
       },
 
@@ -303,17 +303,13 @@
       "mark": {
         "type": "text",
         "color": "black",
-        "baseline": "top",
+        "baseline": "bottom",
         "font": "Lato",
-        "fontSize": 12,
-        "fontWeight": 500
+        "fontSize": 11,
+        "fontWeight": 900
       },
       "encoding": {
-        "text": {
-          "field": "value",
-          "type": "nominal",
-          "format": ".3s"
-        },
+        "text": { "field": "to_name" },
         "latitude": {
           "field": "to_lat"
         },
@@ -339,22 +335,21 @@
             "empty": false
           }
         },
-        {
-          "calculate": "datum.value + ' TJ'",
-          "as": "note"
-        }
+        { "calculate": "format(datum.value, '.3s') + ' TJ'", "as": "val_note"}
       ],
 
       "mark": {
         "type": "text",
         "color": "black",
-        "baseline": "bottom",
+        "baseline": "top",
         "font": "Lato",
-        "fontSize": 11,
-        "fontWeight": 900
+        "fontSize": 12,
+        "fontWeight": 500
       },
       "encoding": {
-        "text": { "field": "to_name" },
+        "text": {
+          "field": "val_note"
+        },
         "latitude": {
           "field": "to_lat"
         },
@@ -416,7 +411,8 @@
         },
         { "filter": "datum.from!='TOTAL'" },
         { "filter": "datum.from!=datum.to" },
-        { "filter": "datum.year==year_slider" }
+        { "filter": "datum.year==year_slider" },
+        { "calculate": "format(datum.value, '.3s') + ' TJ'", "as": "val_note"}
       ],
 
       "mark": {
@@ -429,8 +425,7 @@
       },
       "encoding": {
         "text": {
-          "field": "value",
-          "format": ".3s"
+          "field": "val_note"
         },
         "latitude": {
           "field": "from_lat"
