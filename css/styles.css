@@ -1,9 +1,14 @@
-﻿#ng_trade_map {
+﻿@font-face {
+    font-family: "Montserrat";
+    src: url(https://github.com/JulietaUla/Montserrat/blob/master/fonts/ttf/Montserrat-Black.ttf?raw=true) format("truetype");
+}
+
+#ng_trade_map {
     margin: 8px;
     padding: 8px;
     height: fit-content;
     width: fit-content;
-    background-color: darkgrey;
+    background-color: #59a2ba;
 }
 
 #energy_dependence_map {
@@ -11,7 +16,7 @@
     padding: 19px;
     height: fit-content;
     width: fit-content;
-    background-color: darkgrey;
+    background-color: #256D85;
 }
 
 #electricity_mix_bar {
@@ -19,7 +24,11 @@
     padding: 19px;
     height: fit-content;
     width: fit-content;
-    background-color: darkgrey;
+    background-color: #256D85;
+}
+
+#background {
+    background-color: #06283D;
 }
 
 #main_box {
@@ -29,7 +38,7 @@
     padding: 19px;
     width: fit-content;
     height: fit-content;
-    background-color: lightblue;
+    background-color: #256D85;
 }
 
 #head_box {
@@ -38,7 +47,7 @@
     padding: 10px;
     width: 1000px;
     height: auto;
-    background-color: lightgrey;
+    background-color: #DFF6FF;
 }
 
 #body_box {
@@ -47,14 +56,21 @@
     padding: 10px;
     width: 1000px;
     height: auto;
-    background-color: lightgrey;
+    background-color: #DFF6FF;
 }
 
 #title {
     text-align: center;
     font-weight: bold;
     font-size:48px;
-    font-family: Lato;
+    font-family: Montserrat;
+}
+
+#chart_title {
+    text-align: center;
+    font-weight: bold;
+    font-size:24px;
+    font-family: Montserrat;
 }
 
 #body_text {

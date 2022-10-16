@@ -2,8 +2,10 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": 600,
   "height": 500,
+  "title": "EU Energy Import Dependence",
   "config": {
-    "background": null
+    "background": null,
+    "title": {"font": "Montserrat", "fontSize": 24, "fontWeight": 900}
   },
 
   "projection": {
@@ -49,7 +51,7 @@
 
       "mark": {
         "type": "geoshape",
-        "fill": "lightgrey",
+        "fill": "grey",
         "stroke": "white"
       },
       "encoding": {
@@ -95,8 +97,8 @@
 
       "mark": {
         "type": "geoshape",
-        "fill": "#f2dab3",
-        "stroke": "white"
+        "fill": "#e9ebd5",
+        "stroke": "#bfbfbf"
       },
 
       "encoding": {
