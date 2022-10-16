@@ -383,7 +383,7 @@
         "color": "black",
         "baseline": "bottom",
         "font": "Lato",
-        "fontSize": 12,
+        "fontSize": 10,
         "fontWeight": 900
       },
       "encoding": {
@@ -420,7 +420,7 @@
         "color": "black",
         "baseline": "top",
         "font": "Lato",
-        "fontSize": 11,
+        "fontSize": 10,
         "fontWeight": 500
       },
       "encoding": {
