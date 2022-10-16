@@ -43,7 +43,23 @@
     "color": {
       "field": "product",
       "type": "nominal",
-      "title": "Product"
+      "title": "Product",
+      "scale":{
+        "domain": [
+          "Solid fossil fuels",
+          "Natural gas",
+          "Nuclear heat",
+          "Oil and petroleum",
+          "Renewables and biofuels"
+        ],
+        "range":[
+          "#7f7f7f",
+          "#ff7f0e",
+          "#bcbd22",
+          "#1f77b4",
+          "#2ca02c"
+        ]
+      }
     }
   }
 }
