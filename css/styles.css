@@ -7,7 +7,7 @@
 }
 
 #energy_dependence_map {
-    left: calc(50% - 375px);
+    left: calc(50% - 350px);
     padding: 19px;
     height: fit-content;
     width: fit-content;
@@ -55,14 +55,25 @@
 }
 
 #title {
+    width:700px;
+    margin:auto;
     text-align: center;
     font-weight: bold;
     font-size:48px;
     font-family: Montserrat;
 }
 
-#body_text {
+#head_text {
     width: 500px;
+    margin: auto;
+    text-align: justify;
+    font-size: 18px;
+    font-family: Lato;
+    padding: 10px;
+}
+
+#body_text {
+    width: auto;
     margin: auto;
     text-align: justify;
     font-size: 18px;
@@ -74,5 +85,13 @@
     text-align: center;
     font-size: 11px;
     font-style: italic;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family:Lato;
+}
+
+#orangetext {
+    color:#da8222;
+}
+
+#bluetext {
+    color:#134b85;
 }

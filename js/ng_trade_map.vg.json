@@ -1,21 +1,13 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 600,
-  "height": 500,
-  "title": "EU Energy Import Dependence",
+  "title": "EU Natural Gas Imports",
+  
   "config": {
     "background": null,
-    "title": {"font": "Montserrat", "fontSize": 24, "fontWeight": 900}
+    "title": {"font": "Montserrat", "fontSize": 24, "fontWeight": 900,"align": "center"}
   },
 
-  "projection": {
-    "type": "conicEqualArea",
-    "center": [ 18, 47 ],
-    "parallels": [ 40, 65 ],
-    "scale": 650
-  },
-
-  "params": [
+ "params": [
     {
       "name": "year_slider",
       "value": 2020,
@@ -24,10 +16,22 @@
         "min": 1990,
         "max": 2020,
         "step": 1,
-        "name": "Year: "
+        "name": "Year:"
       }
     }
-  ],
+   ],
+"vconcat":[
+  {
+  "width": 560,
+  "height": 500,
+  
+
+  "projection": {
+      "type": "conicEqualArea",
+      "center": [ -33, 66 ],
+      "parallels": [ 40, 66 ],
+      "scale": 620
+    },
 
   "layer": [
     {
@@ -88,9 +92,12 @@
       "params": [
         {
           "name": "select_country",
+          "value":{"to":["FRA"],"vlPoint":{"or":[{"to":"FRA"}]}},
           "select": {
             "type": "point",
-            "fields": [ "to" ]
+            "clear":false,
+            "fields": [ "to" ],
+            "toggle": "false"
           }
         }
       ],
@@ -435,6 +442,89 @@
         "longitude": {
           "field": "from_lon"
         }
+      }
+    }
+  ]},
+  {
+    "height":20,
+    "data": {
+        "url": "https://raw.githubusercontent.com/SctMccoll/FIT3179-Project-2/main/Data/Natural_gas_imports.csv"
+      },
+      "transform": [
+        {
+          "filter": {
+            "param": "select_country",
+            "empty": false
+          }
+        },
+        {"calculate": "'Country: ' + datum.to_name", "as": "country_note"}
+        ],
+
+       "mark": {
+        "type": "text",
+        "color": "black",
+        "font": "Lato",
+        "align":"left",
+        
+        "fontSize": 18,
+        "fontWeight": 100
+      },
+      "encoding": {
+        "text": ""
+      }
+    },
+
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/SctMccoll/FIT3179-Project-2/main/Data/Natural_gas_imports.csv"
+      },
+      "height": 100,
+      "width":550,
+      "mark": "area",
+      "transform": [
+        {
+          "filter": {
+            "param": "select_country",
+            "empty": false
+          }
+        },
+        {"filter":"datum.from!= 'TOTAL'"},
+        { "calculate": "datum.year", "as": "xyear"},
+        { "calculate": "format(datum.value, '.3s') + ' TJ'", "as": "val_note"}
+      ],
+      "encoding": {
+        "x": {
+          "field": "year",
+           "title":"Year"
+           },
+        "y": {
+          "field": "value",
+          "title":"Imports (TJ)", 
+          "type": "quantitative"
+          },
+        "color": {
+            "field": "from",
+            "type": "nominal",
+            "title": "Source",
+            "legend":{
+              "orient": "none",
+              "labelFontSize":8,
+              "legendY":520,
+              "direction": "horizontal"
+            }  
+        },
+        "tooltip":[
+          {
+            "field": "from_name",
+            "type": "nominal",
+            "title": "Country"
+          },
+          {
+            "field": "val_note",
+            "type": "nominal",
+            "title": "Imports"
+          }
+        ]
       }
     }
   ]
