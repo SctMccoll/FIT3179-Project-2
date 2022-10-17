@@ -28,7 +28,8 @@
 
   "transform": [
     { "filter": "datum.country==country_select" },
-    { "filter": "datum.product!='Total'" }
+    { "filter": "datum.product!='Total'" },
+    {"calculate": "format(datum.value,'.3s') + ' TJ'", "as": "value_note"}
   ],
 
   "mark": "bar",
@@ -40,7 +41,7 @@
     },
     "y": {
       "field":"value",
-      "title":" Total Production (TJ)",
+      "title":" Total Electricity Production (TJ)",
       "type": "quantitative"
     },
     "color": {
@@ -63,6 +64,10 @@
           "#2ca02c"
         ]
       }
-    }
+    },
+    "tooltip":[
+      {"field": "product", "title": "Product"},
+      {"field": "value_note", "title": "Production"}
+    ]
   }
 }

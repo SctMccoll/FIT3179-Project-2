@@ -1,0 +1,31 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width":300,
+  "title": "EU27 Household Energy Consumption By Product",
+  "config": {
+    "background": null,
+    "title": {"font": "Montserrat", "fontSize": 24, "fontWeight": 900}
+  },
+  "data":{
+    "url": "https://raw.githubusercontent.com/SctMccoll/FIT3179-Project-2/main/Data/household_consumption_2020.csv"
+  },
+
+  "transform": [
+    {"calculate": "format(datum.value,'.3s') + ' TJ'", "as": "value_note"}
+  ],
+
+ "mark": {"type": "arc", "innerRadius": 50},
+  "encoding": {
+    "theta": {"field": "value", "type": "quantitative"},
+    "color": {
+      "field": "product",
+      "title":"Product", 
+      "type": "nominal",
+      "scale": {"scheme":"set3"}
+      },
+    "tooltip":[
+      {"field": "product", "title": "Product"},
+      {"field": "value_note", "title": "Consumption"}
+    ]
+  }
+}

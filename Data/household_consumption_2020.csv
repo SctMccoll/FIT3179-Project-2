@@ -1,11 +1,11 @@
-siec,value,product
-C0000X0350-0370,281768.4999,Solid fossil fuels
-E7000,2569459.131,Electricity
-G3000,3290118.278,Natural gas
-H8000,851166.6848,Heat
-O4630,229985.4457,Liquefied petroleum gases
-O4669,50320.47931,Other kerosene
-O4671XR5220B,985016.0849,Gas oil and diesel oil
-R5110-5150_W6000RI,1742677.835,Primary solid biofuels
-RA410,87802.76444,Solar thermal
-RA600,252944.559,Ambient heat (heat pumps)
+siec,value,product,significant
+C0000X0350-0370,281768.4999,Solid fossil fuels,FALSE
+E7000,2569459.131,Electricity,TRUE
+G3000,3290118.278,Natural gas,TRUE
+H8000,851166.6848,Heat,TRUE
+O4630,229985.4457,Liquefied petroleum gases,FALSE
+O4669,50320.47931,Other kerosene,FALSE
+O4671XR5220B,985016.0849,Gas oil and diesel oil,TRUE
+R5110-5150_W6000RI,1742677.835,Primary solid biofuels,TRUE
+RA410,87802.76444,Solar thermal,FALSE
+RA600,252944.559,Ambient heat (heat pumps),FALSE

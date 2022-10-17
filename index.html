@@ -72,8 +72,9 @@
             </div>
             <div class="pure-u-1-3">
                 <p id="body_text">
-                    Natural Gas is one of the most vital energy products, particularly for heating and electricity production.
+                    Natural Gas is one of the most vital energy products, particularly for heating and electricity production. For example, in 2020 Italy used <b id="orangetext"></b>
                 </p>
+                <div id="household_consumption"></div>
             </div>
         </div>
     </div>
@@ -98,6 +99,9 @@
 
         var spec4 = "js/electricity_mix_bar.vg.json";
         vegaEmbed('#electricity_mix_bar', spec4).then(function (result) { }).catch(console.error);
+
+        var spec5 = "js/household_consumption.vg.json";
+        vegaEmbed('#household_consumption', spec5).then(function (result) { }).catch(console.error);
 
     </script>
 
