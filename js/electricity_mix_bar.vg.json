@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.5.json",
-  "width": 370,
+  "width": 525,
   "height": 350,
   "title":"Electricity and Heat Production by Product",
 
