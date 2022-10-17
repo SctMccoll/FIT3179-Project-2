@@ -30,7 +30,7 @@
     "height": 500,
     "projection": {
       "type": "conicEqualArea",
-      "center": [ -30, 66 ],
+      "center": [ 30, 66 ],
       "parallels": [ 40, 65 ],
       "scale": 750
     },
@@ -144,63 +144,63 @@
           }
         ]
       }
-    }
+    },
+    {
+        "transform": [
+          {
+            "filter": {
+              "param": "select_country",
+              "empty": false
+            }
+          },
+          {"calculate": "'Country: ' + datum.NAME", "as": "country_note"}
+          ],
+
+        "mark": {
+          "type": "text",
+          "color": "black",
+          "font": "Helvetica",
+          "align":"left",
+          "x":10,
+          "y":520,
+          "fontSize": 24
+        },
+        "encoding": {
+          "text": { "field": "country_note" }
+        }
+      }
   ]
 
   },
-
-    {
-      "transform": [
-        {
-          "filter": {
-            "param": "select_country",
-            "empty": false
-          }
-        },
-        {"calculate": "'Country: ' + datum.NAME", "as": "country_note"}
-        ],
-
-       "mark": {
-        "type": "text",
-        "color": "black",
-        "font": "Montserrat",
-        "align":"left",
-        "fontSize": 24,
-        "fontWeight": 1
+  {
+    
+    "height": 100,
+    "width":600,
+    "mark": {"type": "line",
+    "color":"#f7b565"},
+    "transform": [
+      {
+        "filter": {
+          "param": "select_country",
+          "empty": false
+        }
       },
-      "encoding": {
-        "text": { "field": "country_note" }
-      }
-    },
-
-    {
-      
-      "height": 100,
-      "width":600,
-      "mark": {"type": "line",
-      "color":"#f7b565"},
-      "transform": [
-        {
-          "filter": {
-            "param": "select_country",
-            "empty": false
-          }
+      { "calculate": "datum.YEAR", "as": "xyear"},
+      { "calculate": "format(datum.PC_DEP, '.3f') + ' %'", "as": "val_note"}
+    ],
+    "encoding": {
+      "x": {
+        "field": "xyear",
+        "title":"Year"
         },
-        { "calculate": "datum.YEAR", "as": "xyear"}
-      ],
-      "encoding": {
-        "x": {
-          "field": "xyear",
-           "title":"Year"
-           },
-        "y": {
-          "field": "PC_DEP",
-          "title":"Depedence (%)", 
-          "type": "quantitative",
-          "scale":{"domainMax":100}
-          }
-      }
+      "y": {
+        "field": "PC_DEP",
+        "title":"Depedence (%)", 
+        "type": "quantitative",
+        "scale":{"domainMax":100}
+        }
     }
+  }
     
   ]
 }

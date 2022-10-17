@@ -4,7 +4,7 @@
   
   "config": {
     "background": null,
-    "title": {"font": "Montserrat", "fontSize": 24, "fontWeight": 900, "anchor":"middle"}
+    "title": {"font": "Montserrat", "fontSize": 24, "fontWeight": 900,"anchor":"middle"}
   },
 
  "params": [
@@ -28,9 +28,9 @@
 
   "projection": {
       "type": "conicEqualArea",
-      "center": [ -33, 66 ],
+      "center": [ -40, 68 ],
       "parallels": [ 40, 66 ],
-      "scale": 620
+      "scale": 600
     },
 
   "layer": [
@@ -55,7 +55,7 @@
 
       "mark": {
         "type": "geoshape",
-        "fill": "lightgrey",
+        "fill": "lightslategray",
         "stroke": "white"
       },
       "encoding": {
@@ -92,7 +92,7 @@
       "params": [
         {
           "name": "select_country",
-          "value":{"to":["FRA"],"vlPoint":{"or":[{"to":"FRA"}]}},
+          "value":{"to":["UKR"],"vlPoint":{"or":[{"to":"UKR"}]}},
           "select": {
             "type": "point",
             "clear":false,
@@ -104,8 +104,8 @@
 
       "mark": {
         "type": "geoshape",
-        "fill": "#e9ebd5",
-        "stroke": "#bfbfbf"
+        "fill": "lightgrey",
+        "stroke":"white"
       },
 
       "encoding": {
@@ -138,7 +138,7 @@
       "mark": {
         "type": "circle",
         "color": "#93BDF1",
-        "stroke": "white",
+        "stroke":"white",
         "opacity": 0.5
       },
       "encoding": {
@@ -445,42 +445,15 @@
       }
     }
   ]},
-  {
-    "height":20,
-    "data": {
-        "url": "https://raw.githubusercontent.com/SctMccoll/FIT3179-Project-2/main/Data/Natural_gas_imports.csv"
-      },
-      "transform": [
-        {
-          "filter": {
-            "param": "select_country",
-            "empty": false
-          }
-        },
-        {"calculate": "'Country: ' + datum.to_name", "as": "country_note"}
-        ],
-
-       "mark": {
-        "type": "text",
-        "color": "black",
-        "font": "Lato",
-        "align":"left",
-        
-        "fontSize": 18,
-        "fontWeight": 100
-      },
-      "encoding": {
-        "text": ""
-      }
-    },
-
     {
       "data": {
         "url": "https://raw.githubusercontent.com/SctMccoll/FIT3179-Project-2/main/Data/Natural_gas_imports.csv"
       },
       "height": 100,
-      "width":550,
+      "width":470,
+      "center":true,
       "mark": "area",
+
       "transform": [
         {
           "filter": {
@@ -492,6 +465,7 @@
         { "calculate": "datum.year", "as": "xyear"},
         { "calculate": "format(datum.value, '.3s') + ' TJ'", "as": "val_note"}
       ],
+
       "encoding": {
         "x": {
           "field": "year",
@@ -500,17 +474,20 @@
         "y": {
           "field": "value",
           "title":"Imports (TJ)", 
-          "type": "quantitative"
+          "type": "quantitative",
+          "axis":{"format":".3s"}
           },
         "color": {
             "field": "from",
             "type": "nominal",
             "title": "Source",
             "legend":{
-              "orient": "none",
+              "orient": "bottom",
+              "offset":-10,
               "labelFontSize":8,
-              "legendY":550,
-              "direction": "horizontal"
+              "labelOffset":1,
+              "direction": "horizontal",
+              "columns":12
             }  
         },
         "tooltip":[
