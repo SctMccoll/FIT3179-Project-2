@@ -6,7 +6,7 @@
 
   "config": {
     "background": null,
-    "title": {"font": "Montserrat", "fontSize": 24, "fontWeight": 900}
+    "title": {"font": "Montserrat", "fontSize": 24, "fontWeight": 900, "anchor":"middle"}
   },
 
 

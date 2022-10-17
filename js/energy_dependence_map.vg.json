@@ -5,7 +5,7 @@
 
   "config": {
     "background": null,
-    "title": {"font": "Montserrat", "fontSize": 24, "fontWeight": 900}
+    "title": {"font": "Montserrat", "fontSize": 24, "fontWeight": 900, "anchor":"middle"}
   },
 
   "data": {
@@ -148,7 +148,8 @@
   ]
 
   },
-  {
+
+    {
       "transform": [
         {
           "filter": {
@@ -162,15 +163,16 @@
        "mark": {
         "type": "text",
         "color": "black",
-        "font": "Lato",
+        "font": "Montserrat",
         "align":"left",
-        "fontSize": 18,
-        "fontWeight": 100
+        "fontSize": 24,
+        "fontWeight": 1
       },
       "encoding": {
         "text": { "field": "country_note" }
       }
     },
+
     {
       
       "height": 100,

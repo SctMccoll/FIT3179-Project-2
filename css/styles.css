@@ -23,7 +23,8 @@
 }
 
 #household_consumption {
-    margin: auto;
+    position: relative;
+    left: 16px;
     padding: 19px;
     height: fit-content;
     width: fit-content;

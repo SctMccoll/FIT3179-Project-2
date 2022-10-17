@@ -4,7 +4,7 @@
   
   "config": {
     "background": null,
-    "title": {"font": "Montserrat", "fontSize": 24, "fontWeight": 900,"align": "center"}
+    "title": {"font": "Montserrat", "fontSize": 24, "fontWeight": 900, "anchor":"middle"}
   },
 
  "params": [
@@ -23,7 +23,7 @@
 "vconcat":[
   {
   "width": 560,
-  "height": 500,
+  "height": 539,
   
 
   "projection": {
@@ -509,7 +509,7 @@
             "legend":{
               "orient": "none",
               "labelFontSize":8,
-              "legendY":520,
+              "legendY":550,
               "direction": "horizontal"
             }  
         },
