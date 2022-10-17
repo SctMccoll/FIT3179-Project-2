@@ -63,6 +63,10 @@
           "#a146eb",
           "#2ca02c"
         ]
+      },
+      "legend":{
+        "orient":"bottom",
+        "columns":3
       }
     },
     "tooltip":[

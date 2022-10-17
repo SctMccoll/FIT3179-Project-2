@@ -48,14 +48,14 @@
           "as": "to"
         },
         {
-          "calculate": "'Import data is not available in ' + datum.properties.NAME",
+          "calculate": "'Data is not available in ' + datum.properties.NAME",
           "as": "note"
         }
       ],
 
       "mark": {
         "type": "geoshape",
-        "fill": "lightslategray",
+        "fill": "lightgrey",
         "stroke": "white"
       },
       "encoding": {
@@ -92,7 +92,7 @@
       "params": [
         {
           "name": "select_country",
-          "value":{"to":["UKR"],"vlPoint":{"or":[{"to":"UKR"}]}},
+          "value":{"to":["ESP"],"vlPoint":{"or":[{"to":"ESP"}]}},
           "select": {
             "type": "point",
             "clear":false,
@@ -104,7 +104,8 @@
 
       "mark": {
         "type": "geoshape",
-        "fill": "lightgrey",
+        "fill": "#93BDF1",
+        "opacity":0.5,
         "stroke":"white"
       },
 

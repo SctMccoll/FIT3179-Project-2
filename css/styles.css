@@ -31,6 +31,15 @@
     background-color: #59a2ba;
 }
 
+#energy_emmisions {
+    position: relative;
+    left: 16px;
+    padding: 19px;
+    height: fit-content;
+    width: fit-content;
+    background-color: #59a2ba;
+}
+
 #background {
     background-color: #06283D;
 }

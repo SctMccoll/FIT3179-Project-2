@@ -125,8 +125,10 @@
             "direction":"vertical",
             "orient":"none",
             "legendY":70,
+            "legendX":-50,
             "fillColor":null,
             "titleFont": "Lato",
+            "format":".1%",
             "titleFontSize":14
           }
         },
@@ -163,7 +165,8 @@
           "align":"left",
           "x":10,
           "y":520,
-          "fontSize": 24
+          "fontSize": 14,
+          "smooth":true
         },
         "encoding": {
           "text": { "field": "country_note" }

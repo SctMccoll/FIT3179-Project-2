@@ -1,0 +1,56 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width":220,
+  "title": ["Energy Sector Greenhouse","Gas Emmisions"],
+
+  "config": {
+    "background": "#DFF6FF",
+    "title": {"font": "Montserrat", "fontSize": 24, "fontWeight": 900}
+  },
+
+  "data": {"url": "https://raw.githubusercontent.com/SctMccoll/FIT3179-Project-2/main/Data/energy_emmisions.csv"},
+
+  "layer":[{
+  "mark": "line",
+
+  "encoding": {
+    "x": {"field": "year", "type": "ordinal","title": "Year"},
+    "y": {
+      "field": "index", 
+      "type": "quantitative",
+      "title": "Index",
+      "scale":{"domain":[0,1.25]},
+      "axis":{"values":[0.25,0.5,0.75,1]}
+      },
+    "color": {
+      "field": "country",
+      "type": "nominal",
+      "title": "Country",
+      "legend":{
+        "symbolStrokeWidth":4,
+        "orient": "none",
+        "columns":3,
+        "legendY":240
+      }}
+  }
+  },
+  {
+    "mark": "circle",
+
+    "encoding": {
+      "x": {"field": "year", "type": "ordinal","title": "Year"},
+      "y": {
+        "field": "index", 
+        "type": "quantitative",
+        "title": "Index",
+        "scale":{"domain":[0,1.25]},
+        "axis":{"values":[0.25,0.5,0.75,1]}
+        },
+      "color": {
+        "field": "country",
+        "type": "nominal",
+        "legend":null
+      }
+    }
+  }]
+}
