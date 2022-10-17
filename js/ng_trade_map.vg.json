@@ -51,7 +51,7 @@
 
       "mark": {
         "type": "geoshape",
-        "fill": "grey",
+        "fill": "lightgrey",
         "stroke": "white"
       },
       "encoding": {

@@ -1,11 +1,14 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.5.json",
-  "width": 350,
+  "width": 370,
   "height": 350,
+  "title":"Electricity and Heat Production by Product",
 
   "config": {
-    "background": null
+    "background": null,
+    "title": {"font": "Montserrat", "fontSize": 24, "fontWeight": 900}
   },
+
 
   "data": {
     "url": "https://raw.githubusercontent.com/SctMccoll/FIT3179-Project-2/main/Data/electricity_heat_production.csv"
@@ -37,7 +40,7 @@
     },
     "y": {
       "field":"value",
-      "title":" Total Consumption (TJ)",
+      "title":" Total Production (TJ)",
       "type": "quantitative"
     },
     "color": {
@@ -56,7 +59,7 @@
           "#7f7f7f",
           "#ff7f0e",
           "#bcbd22",
-          "#1f77b4",
+          "#a146eb",
           "#2ca02c"
         ]
       }

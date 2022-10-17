@@ -2,10 +2,11 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": 750,
   "height": 500,
-  
+  "title": "Energy Dependence Map",
 
   "config": {
-    "background": null
+    "background": null,
+    "title": {"font": "Montserrat", "fontSize": 24, "fontWeight": 900}
   },
 
   "data": {
@@ -22,7 +23,7 @@
   "params": [
     {
       "name": "year",
-      "value": 2019,
+      "value": 2020,
       "bind": {
         "input": "range",
         "min": 1990,
@@ -52,7 +53,7 @@
 
       "mark": {
         "type": "geoshape",
-        "fill": "grey",
+        "fill": "lightgrey",
         "stroke": "white"
       },
       "encoding": {
@@ -86,6 +87,16 @@
         {
           "calculate": "if(datum.PC_DEP!=null,datum.PC_DEP/100,null)",
           "as": "Tooltip Dependence"
+        }
+      ],
+
+      "params": [
+        {
+          "name": "select_country",
+          "select": {
+            "type": "point",
+            "fields": [ "COUNTRY" ]
+          }
         }
       ],
 
@@ -123,6 +134,26 @@
           }
         ]
       }
-    }
+    },
+
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/SctMccoll/FIT3179-Project-2/main/Data/Natural_gas_imports.csv"
+      },
+
+      "transform": [
+        { "filter": "datum.YEAR==year" },
+      ],
+
+      "mark": {
+        "type": "text"
+      },
+      "encoding": {
+        "size": {
+          "field": "select_country",
+        }
+      }
+    },
+
   ]
 }
