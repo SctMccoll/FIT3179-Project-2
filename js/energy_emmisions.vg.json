@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width":220,
-  "title": ["Energy Sector Greenhouse","Gas Emmisions"],
+  "title": ["Energy Sector","Emmisions"],
 
   "config": {
     "background": "#DFF6FF",
