@@ -27,12 +27,12 @@
 "vconcat":[
   {
     "width": 550,
-    "height": 500,
+    "height": 400,
     "projection": {
       "type": "conicEqualArea",
-      "center": [ 30, 66 ],
+      "center": [-30, 67 ],
       "parallels": [ 40, 65 ],
-      "scale": 720
+      "scale": 650
     },
    
     "layer": [
@@ -146,32 +146,7 @@
           }
         ]
       }
-    },
-    {
-        "transform": [
-          {
-            "filter": {
-              "param": "select_country",
-              "empty": false
-            }
-          },
-          {"calculate": "'Country: ' + datum.NAME", "as": "country_note"}
-          ],
-
-        "mark": {
-          "type": "text",
-          "color": "black",
-          "font": "Montserrat",
-          "align":"left",
-          "x":10,
-          "y":520,
-          "fontSize": 14,
-          "smooth":true
-        },
-        "encoding": {
-          "text": { "field": "country_note" }
-        }
-      }
+    }
   ]
 
   },
@@ -188,10 +163,18 @@
           "empty": false
         }
       },
-      { "calculate": "datum.YEAR", "as": "xyear"},
-      { "calculate": "format(datum.PC_DEP, '.3f') + ' %'", "as": "val_note"}
+      { "calculate": "datum.YEAR", "as": "xyear"}
     ],
     "encoding": {
+      "column":{
+        "field":"NAME",
+        "title":null,
+        "header":{
+          "labelFont":"Montserrat",
+          "labelFontSize":18,
+          "labelFontWeight":500
+        }
+      },
       "x": {
         "field": "xyear",
         "title":"Year"
