@@ -159,7 +159,7 @@
         "mark": {
           "type": "text",
           "color": "black",
-          "font": "Helvetica",
+          "font": "Montserrat",
           "align":"left",
           "x":10,
           "y":520,
